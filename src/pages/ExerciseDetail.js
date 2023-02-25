@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import Popup from "./Popup";
 import {
   Box,
   Card,
@@ -61,9 +62,19 @@ const exercises = [
 ];
 
 const ExerciseDetail = () => {
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  const handleCardClick = () => {
+    setPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setPopupOpen(false);
+  };
+
   const renderExerciseCard = (exercise) => (
     <Grid item xs={12} sm={6} md={4} key={exercise.id}>
-      <Card>
+      <Card onClick={handleCardClick}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -130,6 +141,7 @@ const ExerciseDetail = () => {
             </React.Fragment>
           ))}
         </Grid>
+        {popupOpen && <Popup handleClose={handleClosePopup} />}
       </Container>
     </Box>
   );

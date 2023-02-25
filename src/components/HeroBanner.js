@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
-
+import Link from "react-dom";
 import HeroBannerImage from "../assets/images/banner.png";
 
 const HeroBanner = () => {
@@ -27,7 +27,7 @@ const HeroBanner = () => {
       </Typography>
       <Stack>
         <a
-          href="#exercises"
+          href="./exercise"
           style={{
             marginTop: "45px",
             textDecoration: "none",
@@ -43,6 +43,7 @@ const HeroBanner = () => {
         >
           Explore Exercises
         </a>
+        
       </Stack>
       <Typography
         fontWeight={600}
