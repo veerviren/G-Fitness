@@ -20,7 +20,7 @@ const Footer = () => (
       textAlign="center"
       pb="40px"
     >
-      Made with ❤️ by Viren Variya
+      Made with ❤️ by Viren Variya ❤️ Pragati Dosad
     </Typography>
   </Box>
 );

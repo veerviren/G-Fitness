@@ -1,9 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Stack } from '@mui/material';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Stack } from "@mui/material";
 
-import Logo from '../assets/images/Logo.png';
+import Logo from "../assets/images/Logo.png";
+
 const Navbar = () => {
+  const location = useLocation();
+
+  const isActive = (pathname) => {
+    return location.pathname === pathname;
+  };
+
   return (
     <Stack
       direction="row"
@@ -33,21 +40,25 @@ const Navbar = () => {
           to="/"
           style={{
             textDecoration: "none",
-            color: "#3A1212",
-            borderBottom: "3px solid #FF2625",
+            color: isActive("/") ? "#FF2625" : "#3A1212",
+            borderBottom: isActive("/") ? "3px solid #FF2625" : "none",
           }}
         >
           Home
         </Link>
-        <a
-          href="#exercises"
-          style={{ textDecoration: "none", color: "#3A1212" }}
+        <Link
+          to={{ pathname: "/exercise" }}
+          style={{
+            textDecoration: "none",
+            color: isActive("/exercise") ? "#FF2625" : "#3A1212",
+            borderBottom: isActive("/exercise") ? "3px solid #FF2625" : "none",
+          }}
         >
           Exercises
-        </a>
+        </Link>
       </Stack>
     </Stack>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

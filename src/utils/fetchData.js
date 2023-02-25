@@ -1,8 +1,10 @@
 export const exerciseOptions = {
   method: "GET",
+  url: "https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises",
+  params: { muscle: "biceps" },
   headers: {
     "X-RapidAPI-Key": "d2b17dfc33msh99c38c3e86eddeap1e0b29jsne2d2f4b7281a",
-    "X-RapidAPI-Host": "f81d5c7777msh2d926f7bd8e2c22p1af665jsn76a239cf9aaa",
+    "X-RapidAPI-Host": "exercises-by-api-ninjas.p.rapidapi.com",
   },
 };
 
